@@ -1,6 +1,14 @@
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-@import url('https://fonts.cdnfonts.com/css/asciid');
+
+@font-face {
+    font-family: 'asciid';
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local('asciid'),
+        url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
+}
 
 body {
     /* font, change to '' for default discord font */
@@ -34,7 +42,7 @@ body {
     --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
     --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
-    --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
     --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
     --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
     --dms-background-image-url: url(''); /* url of the background image */
@@ -156,9 +164,12 @@ body {
 
 .visual-refresh {
     .bg__960e4 {
-        background: var(--bg-base-primary);
+        background: var(--background-base-low);
     }
     .container__01ae2 {
-        background-color: var(--bg-base-primary);
+        background-color: var(--background-base-low);
+    }
+    .container__37e49 {
+        padding: 8px;
     }
 }

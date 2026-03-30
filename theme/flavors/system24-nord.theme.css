@@ -1,6 +1,6 @@
 /**
  * @name system24 (nord)
- * @description a tui-like discord theme. based on nord theme (https://www.nordtheme.com).
+ * @description a tui-style discord theme. based on nord theme (https://www.nordtheme.com).
  * @author refact0r
  * @version 2.0.0
  * @invite nz87hXyvcy
@@ -45,7 +45,7 @@ body {
     --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
     --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
-    --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
     --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
     --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
     --dms-background-image-url: url(''); /* url of the background image */

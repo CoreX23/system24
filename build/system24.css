@@ -1,7 +1,15 @@
 /* main.css */
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-@import url('https://fonts.cdnfonts.com/css/asciid');
+
+@font-face {
+    font-family: 'asciid';
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local('asciid'),
+        url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
+}
 
 body {
     /* font, change to '' for default discord font */
@@ -35,7 +43,7 @@ body {
     --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
     --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
-    --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
     --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
     --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
     --dms-background-image-url: url(''); /* url of the background image */
@@ -157,10 +165,13 @@ body {
 
 .visual-refresh {
     .bg__960e4 {
-        background: var(--bg-base-primary);
+        background: var(--background-base-low);
     }
     .container__01ae2 {
-        background-color: var(--bg-base-primary);
+        background-color: var(--background-base-low);
+    }
+    .container__37e49 {
+        padding: 8px;
     }
 }
 
@@ -275,9 +286,9 @@ body {
 
 @container body style(--panel-labels: on) {
     .visual-refresh {
-        .guilds_c48ade,
-        .panels_c48ade,
-        .sidebarList_c48ade,
+        .guilds__5e434,
+        .panels__5e434,
+        .sidebarList__5e434,
         .subtitleContainer_f75fb0,
         .messagesWrapper__36d07,
         .channelTextArea_f75fb0,
@@ -295,7 +306,7 @@ body {
                 position: absolute;
                 top: -10px;
                 left: 8px;
-                background-color: var(--bg-base-primary);
+                background-color: var(--background-base-low);
                 padding: 0 4px;
                 z-index: 100;
                 font-size: 16px;
@@ -307,13 +318,13 @@ body {
             }
         }
 
-        .guilds_c48ade::after {
+        .guilds__5e434::after {
             content: 'nav';
         }
-        .panels_c48ade::after {
+        .panels__5e434::after {
             content: 'user';
         }
-        .sidebarList_c48ade::after {
+        .sidebarList__5e434::after {
             content: 'channels';
         }
         .subtitleContainer_f75fb0::after {
@@ -346,41 +357,40 @@ body {
         }
 
         .content_f75fb0 > .membersWrap_c8ffbb,
-        .panels_c48ade,
-        .sidebar_c48ade,
-        .sidebarList_c48ade,
+        .panels__5e434,
+        .sidebar__5e434,
+        .sidebarList__5e434,
         .chat_f75fb0,
-        .page_c48ade,
+        .page__5e434,
         .channelTextArea_f75fb0,
         .container__133bf,
         .container_c8ffbb,
-        .guilds_c48ade,
+        .guilds__5e434,
         .peopleColumn__133bf,
         .tabBody__133bf,
-        .container__01ae2 {
-            overflow: visible;
+        .container__01ae2,
+        .chatContent_f75fb0,
+        .messagesWrapper__36d07 {
+            overflow: visible !important;
         }
-        .page_c48ade,
+        .page__5e434,
         .tabBody__133bf {
             min-height: 0;
         }
         .peopleColumn__133bf {
             min-width: 0;
         }
-        .sidebarList_c48ade,
+        .sidebarList__5e434,
         .container_c8ffbb,
         .peopleColumn__133bf,
-        .nowPlayingColumn__133bf {
+        .nowPlayingColumn__133bf,
+        .messagesWrapper__36d07,
+        .channelTextArea_f75fb0 {
             position: relative;
         }
 
         .scroller__36d07 {
             top: 8px;
-        }
-        .membersWrap_c8ffbb,
-        .guilds_c48ade,
-        .sidebarList_c48ade {
-            padding-top: 8px;
         }
         .membersWrap_c8ffbb {
             height: calc(100% - 8px);
@@ -409,6 +419,10 @@ body {
 
         .callContainer_cb9592 {
             padding: 8px;
+        }
+
+        .messagesWrapper__36d07 {
+            mask: none !important;
         }
     }
 }
@@ -490,9 +504,9 @@ body {
 
     .wrapper__44b0c,
     .container__1ce5d {
-        --online-2: #40a258;
+        --online-2: #43a25a;
         --dnd-2: #d83a41;
-        --idle-2: #cc954c;
+        --idle-2: #ca9654;
         --offline-2: #82838b;
         --streaming-2: #9147ff;
     }
@@ -507,17 +521,17 @@ body {
         right: -4px;
         border: 2px solid var(--background-base-lower);
     }
-    .wrapper__44b0c:has(rect[fill='#43a25a'])::after,
+    .wrapper__44b0c:has(rect[fill='#45a366'])::after,
     .container__1ce5d:has(.status_a423bd[style='background-color: rgb(67, 162, 90);'])::after {
         background: var(--online-2) !important;
     }
-    .wrapper__44b0c:has(rect[fill='#d83a42'])::after {
+    .wrapper__44b0c:has(rect[fill='#da3e44'])::after {
         background: var(--dnd-2) !important;
     }
-    .wrapper__44b0c:has(rect[fill='#ca9654'])::after {
+    .wrapper__44b0c:has(rect[fill='#ffc04e'])::after {
         background: var(--idle-2) !important;
     }
-    .wrapper__44b0c:has(rect[fill='#82838b'])::after {
+    .wrapper__44b0c:has(rect[fill='#84858d'])::after {
         background: var(--offline-2) !important;
     }
     .wrapper__44b0c:has(rect[fill='#9147ff'])::after {
@@ -538,7 +552,7 @@ body {
         overflow: visible !important;
     }
 
-    .slider__87bf1 > rect[rx='10'] {
+    .slider__3f21e > rect[rx='10'] {
         rx: 0 !important;
     }
 
